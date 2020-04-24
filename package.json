@@ -19,10 +19,7 @@
     "url": "https://github.com/pristas-peter/wp-graphql-gutenberg-server/issues"
   },
   "homepage": "https://github.com/pristas-peter/wp-graphql-gutenberg-server#readme",
-  "devDependencies": {
-    "netlify-cli": "^2.46.0",
-    "now": "^18.0.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "argparse": "^1.0.10",
     "puppeteer": "^2.1.1"
