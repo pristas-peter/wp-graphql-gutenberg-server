@@ -4,7 +4,7 @@
   "description": "GraphQL Gutenberg Server",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ls -laR node_modules/puppeteer && mkdir -p public && touch public/index.html"
   },
   "repository": {
     "type": "git",
