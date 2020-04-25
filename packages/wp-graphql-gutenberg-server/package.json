@@ -1,12 +1,8 @@
 {
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pristas-peter/wp-graphql-gutenberg-server.git"
-  },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "wp-graphql-gutenberg-server",
+  "description": "GraphQL Gutenberg Server",
+  "main": "./src/index.js",
+  "version": "0.1.0",
   "contributors": [
     {
       "name": "Peter Pristas",
@@ -14,14 +10,17 @@
       "url": "https://github.com/pristas-peter"
     }
   ],
+  "bin": "./bin/index.js",
   "author": "Peter Pristas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pristas-peter/wp-graphql-gutenberg-server/issues"
   },
   "homepage": "https://github.com/pristas-peter/wp-graphql-gutenberg-server#readme",
-  "devDependencies": {
-    "lerna": "^3.20.2"
-  },
-  "name": "wp-graphql-gutenberg-server"
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "express": "^4.17.1",
+    "puppeteer": "^3.0.1",
+    "wp-graphql-gutenberg-server-core": "^0.1.0"
+  }
 }
