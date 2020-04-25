@@ -2,7 +2,7 @@
   "name": "wp-graphql-gutenberg-server-core",
   "description": "GraphQL Gutenberg Server Core",
   "main": "./src/index.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "contributors": [
     {
       "name": "Peter Pristas",
