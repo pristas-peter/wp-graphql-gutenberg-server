@@ -5,6 +5,7 @@ const {
   formatError,
   batch,
   blockTypes,
+  ServerError,
 } = require("wp-graphql-gutenberg-server-core");
 
 const { version, description } = require("../package.json");
@@ -32,21 +33,33 @@ const launch = puppeteer.launch({ headless: true });
 
 app.use(express.json());
 
-app.post("/batch", async (req, res) => {
+app.use(async (req, res) => {
+  let context = null;
   try {
-    res.send(await batch({ ...req.body, browser: await launch }));
-  } catch (error) {
-    res.status(500);
-    res.send(formatError({ error }));
-  }
-});
+    if (req.method !== "POST") {
+      throw new ServerError("Wrong HTTP method", 400);
+    }
 
-app.post("/block-types", async (req, res) => {
-  try {
-    res.send(await blockTypes({ ...req.body, browser: await launch }));
+    const browser = await launch;
+    context = await browser.createIncognitoBrowserContext();
+
+    switch (req.path) {
+      case "/batch":
+        res.send(await batch({ ...req.body, browser: context }));
+        break;
+      case "/block-types":
+        res.send(await blockTypes({ ...req.body, browser: context }));
+        break;
+      default:
+        throw new ServerError(`Unknown resource ${req.path}`, 400);
+    }
   } catch (error) {
-    res.status(500);
+    res.status(error.status || 500);
     res.send(formatError({ error }));
+  } finally {
+    if (context !== null) {
+      context.close();
+    }
   }
 });
 
