@@ -1,9 +1,13 @@
 const { ArgumentParser } = require("argparse");
 const express = require("express");
 const puppeteer = require("puppeteer");
+const {
+  formatError,
+  batch,
+  blockTypes,
+} = require("wp-graphql-gutenberg-server-core");
 
-const { version, description } = require("./package.json");
-const { formatError, batch, blockTypes } = require("./src");
+const { version, description } = require("../package.json");
 
 const parser = new ArgumentParser({
   version,
@@ -46,10 +50,12 @@ app.post("/block-types", async (req, res) => {
   }
 });
 
-app.listen(args.port, args.host, (error) => {
+const { host, port } = args;
+
+app.listen(port, host, (error) => {
   if (error) {
     throw error;
   }
 
-  console.info(`✅Server started. 🚀Listening on http://${host}:${port}`);
+  console.info(`✅ Server started. 🚀 Listening on http://${host}:${port}`);
 });

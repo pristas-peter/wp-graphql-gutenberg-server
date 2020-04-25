@@ -1,0 +1,19 @@
+{
+  "name": "wp-graphql-gutenberg-server-core",
+  "description": "GraphQL Gutenberg Server Core",
+  "main": "./src/index.js",
+  "version": "0.0.0",
+  "contributors": [
+    {
+      "name": "Peter Pristas",
+      "email": "pristas.peter@gmail.com",
+      "url": "https://github.com/pristas-peter"
+    }
+  ],
+  "author": "Peter Pristas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pristas-peter/wp-graphql-gutenberg-server/issues"
+  },
+  "homepage": "https://github.com/pristas-peter/wp-graphql-gutenberg-server#readme"
+}

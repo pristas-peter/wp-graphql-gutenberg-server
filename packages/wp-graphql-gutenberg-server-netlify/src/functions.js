@@ -1,8 +1,9 @@
-const { formatError } = require("../src");
+const chromium = require("chrome-aws-lambda");
+const { formatError } = require("wp-graphql-gutenberg-server-core");
 
 function response({ body, statusCode }) {
   return {
-    statusCode: 400,
+    statusCode,
     headers: {
       "content-type": "application/json",
     },
@@ -29,3 +30,11 @@ exports.wrapHandler = (handler) => async (event, context) => {
     });
   }
 };
+
+exports.createBrowser = async () =>
+  chromium.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: true,
+  });

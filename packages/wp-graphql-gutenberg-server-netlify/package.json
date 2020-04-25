@@ -1,12 +1,8 @@
 {
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pristas-peter/wp-graphql-gutenberg-server.git"
-  },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "wp-graphql-gutenberg-server-netlify",
+  "description": "GraphQL Gutenberg Server Netlify",
+  "main": "src/index.js",
+  "version": "0.0.0",
   "contributors": [
     {
       "name": "Peter Pristas",
@@ -20,8 +16,9 @@
     "url": "https://github.com/pristas-peter/wp-graphql-gutenberg-server/issues"
   },
   "homepage": "https://github.com/pristas-peter/wp-graphql-gutenberg-server#readme",
-  "devDependencies": {
-    "lerna": "^3.20.2"
-  },
-  "name": "wp-graphql-gutenberg-server"
+  "dependencies": {
+    "chrome-aws-lambda": "^2.1.1",
+    "puppeteer-core": "^3.0.1",
+    "wp-graphql-gutenberg-server-core": "0.0.0"
+  }
 }
