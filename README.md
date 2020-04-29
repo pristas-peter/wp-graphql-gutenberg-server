@@ -17,7 +17,14 @@ wp-graphql-gutenberg-server --host [host] --port [port]
 ```
 
 ## Install and Run
-
 ```shell
 npx wp-graphql-gutenberg-server
 ```
+
+## Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/pristas-peter/wp-graphql-gutenberg-server-netlify)
+
+## Deploy with Vercel Now
+
+[![Deploy with Vercel Now](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/pristas-peter/wp-graphql-gutenberg-server-now)
